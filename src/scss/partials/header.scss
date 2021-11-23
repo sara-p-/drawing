@@ -3,4 +3,6 @@
 
 .header {
   background: $light-grey;
+  border-bottom: $base-border;
+  z-index: 3;
 }

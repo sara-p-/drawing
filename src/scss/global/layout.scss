@@ -27,7 +27,7 @@ body {
   width: 100%;
   &__wrapper {
     width: 100%;
-    max-width: $site-width-large;
+    max-width: 100%;
     margin: auto;
     padding: 0 24px;
   }
@@ -53,14 +53,10 @@ body {
   }
 }
 
-.visually-hidden,
-.visually-hide-label,
-.visually-hide-text {
-  position: absolute;
-  right: 999999999px;
-  width: 0;
-  height: 0;
-  opacity: 0;
+.fullscreen {
+  width: auto;
+  height: calc(100vh - 60px);
+  min-height: 100%;
 }
 
 // ********************* FLEXBOX ********************** //
@@ -87,20 +83,21 @@ body {
       @include flex($dir: column-reverse);
     }
   }
+  &--space-between {
+    @extend .flex;
+    @include tablet-portrait-up {
+      @include flex($justify: space-between);
+    }
+  }
 }
 
 // ********************* GRID ********************** //
-// .grid {
-//   @for $i from 1 through 5 {
-//     &--#{$grid-space * $i} {
-//       grid-template-columns: repeat(auto-fill, minmax($grid-space * $i, 1fr));
-//       grid-template-rows: repeat(auto-fill, minmax($grid-space * $i, 1fr));
-//     }
-//   }
-//   &--column {
-//     grid-auto-flow: column;
-//   }
-// }
+.grid {
+  display: grid;
+  gap: $spacing-32;
+  grid-template-columns: repeat(auto-fill, 150px);
+  grid-template-rows: repeat(auto-fill, 150px);
+}
 
 // ********************* LAYOUT MODIFIERS ********************** //
 .padding {
@@ -124,4 +121,15 @@ body {
       }
     }
   }
+}
+
+// ********************* GENERAL ********************** //
+.visually-hidden,
+.visually-hide-label,
+.visually-hide-text {
+  position: absolute;
+  right: 999999999px;
+  width: 0;
+  height: 0;
+  opacity: 0;
 }

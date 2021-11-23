@@ -1,2 +1,9 @@
 @use './variables.scss' as *;
 @use './mixins.scss' as *;
+
+.list {
+  @include clear-list;
+  &__item {
+    margin-bottom: $spacing-24;
+  }
+}

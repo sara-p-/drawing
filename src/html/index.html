@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project Title</title>
+    <title>Drawing</title>
   </head>
   <body>
     <header class="header">
@@ -20,37 +20,102 @@
       </div>
     </header>
     <main>
-      <section class="section">
-        <div class="section__wrapper">
-          <div class="section__row">
-            <div class="section__col">
-              <h1>Project Title</h1>
+      <button id="open" class="button--open">Options</button>
+      <nav class="sidenav">
+        <div class="sidenav__wrapper">
+          <div class="sidenav__row flex--space-between">
+            <div class="sidenav__col">
+              <h1 class="h2">Options</h1>
             </div>
-            <div class="section__col">
-              <img
-                class="image--contain"
-                src="<%=require('../../images/folder.svg')%>"
-                alt="folder"
-              />
+            <div class="sidenav__col">
+              <div class="buttons sidenav__buttons">
+                <button class="button button--unselect">Unselect All</button>
+                <button class="button button--apply">Apply</button>
+                <button id="close" class="button button--close">Close</button>
+              </div>
             </div>
           </div>
+          <h2 class="h3">Background</h2>
+          <ul class="list background grid">
+            <li class="list__item background__item">
+              <button
+                class="list__button background__button background--1"
+              ></button>
+            </li>
+            <li class="list__item background__item">
+              <button
+                class="list__button background__button background--2"
+              ></button>
+            </li>
+            <li class="list__item background__item">
+              <button
+                class="list__button background__button background--3"
+              ></button>
+            </li>
+            <li class="list__item background__item">
+              <button
+                class="list__button background__button background--4"
+              ></button>
+            </li>
+            <li class="list__item background__item">
+              <button
+                class="list__button background__button background--5"
+              ></button>
+            </li>
+          </ul>
+          <h2 class="h3">Shapes</h2>
+          <ul class="list shapes grid">
+            <li class="list__item shapes__item">
+              <button class="list__button shapes__button">
+                <img
+                  class="image--contain shapes__image"
+                  src="<%=require('../../images/shape1.svg')%>"
+                  alt="shape1"
+                />
+              </button>
+            </li>
+            <li class="list__item shapes__item">
+              <button class="list__button shapes__button">
+                <img
+                  class="image--contain shapes__image"
+                  src="<%=require('../../images/shape1.svg')%>"
+                  alt="shape1"
+                />
+              </button>
+            </li>
+            <li class="list__item shapes__item">
+              <button class="list__button shapes__button">
+                <img
+                  class="image--contain shapes__image"
+                  src="<%=require('../../images/shape1.svg')%>"
+                  alt="shape1"
+                />
+              </button>
+            </li>
+            <li class="list__item shapes__item">
+              <button class="list__button shapes__button">
+                <img
+                  class="image--contain shapes__image"
+                  src="<%=require('../../images/shape1.svg')%>"
+                  alt="shape1"
+                />
+              </button>
+            </li>
+            <li class="list__item shapes__item">
+              <button class="list__button shapes__button">
+                <img
+                  class="image--contain shapes__image"
+                  src="<%=require('../../images/shape1.svg')%>"
+                  alt="shape1"
+                />
+              </button>
+            </li>
+          </ul>
         </div>
+      </nav>
+      <section class="section fullscreen">
+        <div class="canvas"></div>
       </section>
     </main>
-    <footer class="footer">
-      <div class="footer__wrapper">
-        <div class="footer__row">
-          <div class="footer__col">
-            <a href="/" class="logo">
-              <img
-                src="<%=require('../../images/placeholder-logo.svg')%>"
-                alt="Home"
-                class="logo__image"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
   </body>
 </html>

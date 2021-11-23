@@ -5,3 +5,41 @@ button {
   @include clear-btn;
   cursor: pointer;
 }
+
+.buttons {
+  .button:not(:nth-of-type(1)) {
+    margin-top: $spacing-8;
+    @include tablet-portrait-up {
+      margin-top: 0;
+      margin-left: $spacing-8;
+    }
+  }
+}
+
+.button {
+  background: $white;
+  padding: $spacing-8 $spacing-24;
+  border: $base-border;
+  &:hover,
+  &:focus {
+    color: $white;
+    background: $black;
+  }
+  &--open {
+    @extend .button;
+    transform: rotate(-90deg);
+    position: fixed;
+    top: 50%;
+    left: -32px;
+    z-index: 1;
+  }
+  &--apply {
+    @extend .button;
+  }
+  &--close {
+    @extend .button;
+  }
+  &--unselect {
+    @extend .button;
+  }
+}

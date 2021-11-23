@@ -1,0 +1,71 @@
+@use '../global/variables.scss' as *;
+@use '../global/mixins.scss' as *;
+
+.sidenav {
+  background: $light-grey;
+  position: fixed;
+  top: 60.41px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-right: $base-border;
+  padding: $spacing-24 0;
+  z-index: 2;
+  overflow: scroll;
+  &__wrapper {
+    width: 100%;
+    padding: 0 $spacing-24;
+  }
+}
+
+.background {
+  &__button {
+    width: 100%;
+    height: 100%;
+    border: $base-border;
+    background: $white;
+    &:hover,
+    &:focus {
+      box-shadow: $base-box-shadow;
+    }
+    &.selected {
+      outline: $selected-outline;
+    }
+  }
+  &--1 {
+    background-image: none;
+  }
+  &--2 {
+    background-image: url('../../images/background2.svg');
+    background-size: 25px;
+    background-repeat: repeat;
+  }
+  &--3 {
+    background-image: url('../../images/background3.svg');
+    background-size: 25px;
+    background-repeat: repeat;
+  }
+  &--4 {
+    background-image: url('../../images/background4.svg');
+    background-size: 25px;
+    background-repeat: repeat;
+  }
+  &--5 {
+    background-image: url('../../images/background5.svg');
+    background-size: 25px;
+    background-repeat: repeat;
+  }
+}
+
+.shapes {
+  &__button {
+    &:hover,
+    &:focus {
+      transition: 300ms;
+      transform: scale(1.2);
+    }
+    &.selected {
+      outline: $selected-outline;
+    }
+  }
+}
