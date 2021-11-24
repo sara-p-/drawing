@@ -25,3 +25,33 @@ img {
     max-width: 200px;
   }
 }
+
+// **************** Section Background ***************** //
+.section.background {
+  background-color: $white;
+  background-repeat: repeat;
+  &--1 {
+    background-color: $white;
+    background-image: none;
+  }
+  &--2 {
+    @extend .background;
+    background-image: url('../../images/background2.svg');
+    background-size: 25px;
+  }
+  &--3 {
+    @extend .background;
+    background-size: 50px;
+    background-image: url('../../images/background3.svg');
+  }
+  &--4 {
+    @extend .background;
+    background-size: 25px;
+    background-image: url('../../images/background4.svg');
+  }
+  &--5 {
+    @extend .background;
+    background-image: url('../../images/background5.svg');
+    background-size: 50px;
+  }
+}

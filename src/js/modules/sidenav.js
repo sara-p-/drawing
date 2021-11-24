@@ -32,6 +32,10 @@ export default function sidenav() {
   // Background Items
   backgroundItems.forEach((item) => {
     item.addEventListener('click', (e) => {
+      // remove 'selected' class from all background items, and then add it to the clicked item
+      backgroundItems.forEach((newItem) => {
+        newItem.classList.remove('selected')
+      })
       item.classList.toggle('selected')
     })
   })
@@ -40,6 +44,16 @@ export default function sidenav() {
   shapeItems.forEach((item) => {
     item.addEventListener('click', (e) => {
       item.classList.toggle('selected')
+    })
+  })
+
+  // ******************* Un-selecting the Items ******************* //
+  const unselectButton = document.querySelector('.button--unselect')
+
+  unselectButton.addEventListener('click', (e) => {
+    const selected = document.querySelectorAll('.selected')
+    selected.forEach((item) => {
+      item.classList.remove('selected')
     })
   })
 }
