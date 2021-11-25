@@ -11,6 +11,10 @@ export default function sidenav() {
   })
 
   sideNavOpen.addEventListener('click', (e) => {
+    const selectedShapes = document.querySelectorAll('.shapes__button.selected')
+    selectedShapes.forEach((shape) => {
+      shape.classList.remove('selected')
+    })
     gsap.to(sideNav, {
       x: 0,
       duration: 1.5,
