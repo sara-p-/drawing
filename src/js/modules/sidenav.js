@@ -4,6 +4,7 @@ export default function sidenav() {
   const sideNav = document.querySelector('nav.sidenav')
   const sideNavOpen = document.querySelector('button#open')
   const sideNavClose = document.querySelector('button#close')
+  const sideNavApply = document.querySelector('button#apply')
 
   // ******************* Opening/Closing the sidenav ******************* //
   gsap.set(sideNav, {
@@ -22,6 +23,13 @@ export default function sidenav() {
     })
   })
   sideNavClose.addEventListener('click', (e) => {
+    gsap.to(sideNav, {
+      x: '-100%',
+      duration: 1.5,
+      ease: 'power3.out',
+    })
+  })
+  sideNavApply.addEventListener('click', (e) => {
     gsap.to(sideNav, {
       x: '-100%',
       duration: 1.5,

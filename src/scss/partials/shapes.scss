@@ -2,7 +2,42 @@
 @use '../global/mixins.scss' as *;
 
 .shape {
-  width: 100%;
-  max-width: 150px;
+  width: 150px;
   cursor: pointer;
+  padding: 0;
+  border: none;
+  // position: relative;
+  &__handle {
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    background: transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    height: 10px;
+    width: 10px;
+  }
+  &__rotate-handle {
+    position: absolute;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    top: 0px;
+    right: 0px;
+    line-height: 1;
+    i {
+      color: $grey;
+    }
+  }
+  &:hover,
+  &:focus,
+  &.mouse-down,
+  &.ui-resizable-resizing {
+    padding: 5px;
+    border: 3px dashed $light-grey;
+    .shape__handle {
+      border-right: 5px solid $grey;
+      border-bottom: 5px solid $grey;
+    }
+  }
 }
